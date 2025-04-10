@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background: #fdfdfd;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(to bottom, #4b0082 0%, #9999ff 100%);;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 3rem;
+    background: linear-gradient(to right, #f0e7e7e4, #eae9ed);
+  }
+  
+  .hero-text {
+    max-width: 50%;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    color: #4b0082;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  .cta-btn {
+    background: #4b0082;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background: #350062;
+  }
+  
+  .hero-img img {
+    width: 300px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  .features {
+    padding: 3rem;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .feature-box {
+    background: #e6e6fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  footer {
+    background: #4b0082;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .book-session {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.book-session h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.book-session input, .book-session select, .book-session button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.book-session .session-mode {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.book-session .session-mode button {
+    width: 48%;
+    background-color: #eee;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+.book-session .submit-btn {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+}
+
+.custom-session-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+.custom-session-container img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+  

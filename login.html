@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Learnova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #4b0082 0%, #9999ff 100%);;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+        background: white;
+        padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+      color: #1a1a1a;
+    }
+
+    .subtext {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .subtext a {
+      color: #4b2aad;
+      text-decoration: none;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group input {
+      margin-right: 8px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #4b2aad;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .google-btn {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .google-btn img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .forgot {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .forgot a {
+      color: #4b2aad
+      text-decoration none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Sign in</h2>
+    <div class="subtext">or <a href="signup.html">create an account</a></div>
+
+    <input type="email" class="input-field" placeholder="Email">
+    <input type="password" class="input-field" placeholder="Password">
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="remember">
+      <label for="remember">Remember me</label>
+    </div>
+
+    <button class="btn">Login</button>
+
+    <button class="google-btn">
+      <img src="google.png" alt="Google logo">
+      Sign in with Google
+    </button>
+
+    <div class="forgot">
+      <a href="#">Forgotten your password?</a>
+    </div>
+  </div>
+
+</body>
+</html>

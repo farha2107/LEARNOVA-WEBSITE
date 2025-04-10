@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnova  |  Ignite Your Learning</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+
+    <!-- Header -->
+     <header>
+        <div class = "logo">Learnova</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="signup.html" >Login</a></li>
+
+
+            </ul>
+            
+        </nav>
+     </header>
+
+     <!-- Hero Section  -->
+      <section class = "hero">
+        <div class = "hero-text">
+            <h1>Ignite Your Learning Journey with Learnova</h1>
+            <p> Empowering students with smart, engaging, and personalized learning experiences.</p>
+            <a href="courses.html" class = "cta-btn">Explore Courses</a>
+        </div>
+        <div class = "hero-img">
+        <img src = "learnova-logo.png.png" alt = "Learnova Logo">
+        </div>
+      </section>
+      <section class="custom-session-container">
+        <img src="https://media.istockphoto.com/id/1225627211/photo/happy-teen-girl-with-phone-e-learning-sketch.jpg?s=612x612&w=is&k=20&c=gXArPdlYKcXCvnw0-SbfhLjl12eC9gqn4xLGL0CK-gM=" alt="E-learning Concept Image" style="max-width: 600px;">
+
+        <div class="book-session">
+            <h2>Book your Free Session</h2>
+            <p style="text-align: center; font-size: 14px; color: #666;">Learn from India's best teachers</p>
+            <div class="session-mode">
+                <button>Online</button>
+                <button>Offline</button>
+            </div>
+            <input type="text" placeholder="Enter Name of your Child" required>
+            <input type="text" placeholder="Enter your Mobile Number" required>
+            <input type="email" placeholder="Email Address">
+            <select required>
+                <option value="">Select State</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Other">Other</option>
+            </select>
+            <button class="submit-btn">Continue to Schedule</button>
+        </div>
+    </section>
+      <section class="features">
+        <h2>Why Choose Learnova?</h2>
+        <div class="feature-grid">
+            <div class = "feature-box">📚 Interactive Lessons</div>
+            <div class = "feature-box">🧠 Concept Clarity</div>
+            <div class = "feature-box">🎯 NEET/JEE Focused</div>
+            <div class = "feature-box">📈 Progress Tracking</div>
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+       <footer>
+        <p>&copy 2025 Learnova . All rights reserved. </p>
+       </footer>
+       <script>
+        // Toggle active button for session mode
+        const sessionButtons = document.querySelectorAll('.session-mode button');
+    
+        sessionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                sessionButtons.forEach(btn => btn.style.backgroundColor = '#eee');
+                button.style.backgroundColor = '#d1c4e9'; // highlighted color
+            });
+        });
+    
+        // Form validation (example)
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.addEventListener('click', (e) => {
+            const name = document.querySelector('input[placeholder="Enter Name of your Child"]').value;
+            const mobile = document.querySelector('input[placeholder="Enter your Mobile Number"]').value;
+            const state = document.querySelector('select').value;
+    
+            if (!name || !mobile || !state) {
+                e.preventDefault();
+                alert("Please fill in all required fields.");
+            }
+        });
+    </script>
+
+<script>
+    // Toggle session mode highlighting
+    const session = document.querySelectorAll('.session-mode button');
+    sessionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            sessionButtons.forEach(btn => btn.style.backgroundColor = '#eee');
+            button.style.backgroundColor = '#d1c4e9'; // active color
+        });
+    });
+
+    // Form submission handling
+    const submit = document.querySelector('.submit-btn');
+    submitBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // prevent actual form submission
+
+        const name = document.querySelector('input[placeholder="Enter Name of your Child"]').value;
+        const mobile = document.querySelector('input[placeholder="Enter your Mobile Number"]').value;
+        const email = document.querySelector('input[placeholder="Email Address"]').value;
+        const state = document.querySelector('select').value;
+
+        if (!name || !mobile || !state) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        // Mock OTP behavior
+        if (mobile.length !== 10 || !/^\d+$/.test(mobile)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            return;
+        }
+
+        // Simulate OTP send
+        alert(`OTP sent to ${mobile}!\n(Just a demo 😊)`);
+
+        // Mock successful submission
+        setTimeout(() => {
+            alert("Your free session is successfully scheduled! 🎉");
+        }, 1000);
+    });
+</script>
+
+    
+</body>
+</html>
