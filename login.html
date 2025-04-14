@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Login | Learnova</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -106,8 +107,8 @@
     <h2>Sign in</h2>
     <div class="subtext">or <a href="signup.html">create an account</a></div>
 
-    <input type="email" class="input-field" placeholder="Email">
-    <input type="password" class="input-field" placeholder="Password">
+    <input type="email" id="email" class="input-field" placeholder="Email">
+    <input type="password" id="password" class="input-field" placeholder="Password">
 
     <div class="checkbox-group">
       <input type="checkbox" id="remember">
@@ -115,16 +116,55 @@
     </div>
 
     <button class="btn">Login</button>
+    <div id="g_id_onload"
+     data-client_id="428767959991-p7p93mgtlbbi9gigoge0sfe8i69mkm4j.apps.googleusercontent.com"
+     data-login_uri="https://localhost:5500/oauth2callback"
+     data-auto_prompt="false">
+</div>
+<div class="g_id_signin"
+     data-type="standard"
+     data-size="large"
+     data-theme="outline"
+     data-text="sign_in_with"
+     data-shape="rectangular"
+     data-logo_alignment="left">
+</div &#8203;:contentReference[oaicite:6]{index=6}>
 
-    <button class="google-btn">
-      <img src="google.png" alt="Google logo">
-      Sign in with Google
-    </button>
 
     <div class="forgot">
       <a href="#">Forgotten your password?</a>
     </div>
   </div>
+
+  <script>
+    async function login() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert(data.message);
+                window.location.href = 'home.html';
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during login.');
+        }
+    }
+</script>
+<script src="login.js"></script>
 
 </body>
 </html>
