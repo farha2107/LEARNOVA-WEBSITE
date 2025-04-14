@@ -1,174 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learnova  |  Ignite Your Learning</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learnova | Ignite Your Learning</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #D17D9F 0%, #9999ff 100%);
+      font-family: Arial, sans-serif;
+      animation: fadeIn 2s ease-in-out;
+    }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
+    .login-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: #4b0082;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      color: white;
+      width: 320px;
+      transform: translateY(50px);
+      opacity: 0;
+      animation: slideUp 1s ease-out forwards;
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .login-box input,
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .login-box input {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .login-box button {
+      background-color: #6200ea;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-box button:hover {
+      background-color: #3700b3;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <!-- Login Box -->
+  <div class="login-page">
+    <div class="login-box">
+      <h2>Welcome to Learnova</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Log In</button>
+    </div>
+  </div>
+
+  <!-- Main Content (Initially Hidden) -->
+  <div id="main-content" style="display: none;">
 
     <!-- Header -->
-     <header>
-        <div class = "logo">Learnova</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="signup.html" >Login</a></li>
+    <header>
+      <div class="logo">Learnova</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="signup.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
 
-
-            </ul>
-            
-        </nav>
-     </header>
-
-     <!-- Hero Section  -->
-      <section class = "hero">
-        <div class = "hero-text">
-            <h1>Ignite Your Learning Journey with Learnova</h1>
-            <p> Empowering students with smart, engaging, and personalized learning experiences.</p>
-            <a href="courses.html" class = "cta-btn">Explore Courses</a>
-        </div>
-        <div class = "hero-img">
-        <img src = "learnova-logo.png.png" alt = "Learnova Logo">
-        </div>
-      </section>
-      <section class="custom-session-container">
-        <img src="https://media.istockphoto.com/id/1225627211/photo/happy-teen-girl-with-phone-e-learning-sketch.jpg?s=612x612&w=is&k=20&c=gXArPdlYKcXCvnw0-SbfhLjl12eC9gqn4xLGL0CK-gM=" alt="E-learning Concept Image" style="max-width: 600px;">
-
-        <div class="book-session">
-            <h2>Book your Free Session</h2>
-            <p style="text-align: center; font-size: 14px; color: #666;">Learn from India's best teachers</p>
-            <div class="session-mode">
-                <button>Online</button>
-                <button>Offline</button>
-            </div>
-            <input type="text" placeholder="Enter Name of your Child" required>
-            <input type="text" placeholder="Enter your Mobile Number" required>
-            <input type="email" placeholder="Email Address">
-            <select required>
-                <option value="">Select State</option>
-                <option value="Jharkhand">Jharkhand</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Maharashtra">Maharashtra</option>
-                <option value="Other">Other</option>
-            </select>
-            <button class="submit-btn">Continue to Schedule</button>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Ignite Your Learning Journey with Learnova</h1>
+        <p>Empowering students with smart, engaging, and personalized learning experiences.</p>
+        <a href="courses.html" class="cta-btn">Explore Courses</a>
+      </div>
+      <div class="hero-img">
+        <img src="learnova-logo.png.png" alt="Learnova Logo"/>
+      </div>
     </section>
-      <section class="features">
-        <h2>Why Choose Learnova?</h2>
-        <div class="feature-grid">
-            <div class = "feature-box">📚 Interactive Lessons</div>
-            <div class = "feature-box">🧠 Concept Clarity</div>
-            <div class = "feature-box">🎯 NEET/JEE Focused</div>
-            <div class = "feature-box">📈 Progress Tracking</div>
 
+    <!-- Free Session Booking -->
+    <section class="custom-session-container">
+      <img src="https://media.istockphoto.com/id/1225627211/photo/happy-teen-girl-with-phone-e-learning-sketch.jpg?s=612x612&w=is&k=20&c=gXArPdlYKcXCvnw0-SbfhLjl12eC9gqn4xLGL0CK-gM=" alt="E-learning" style="max-width: 600px;"/>
+      <div class="book-session">
+        <h2>Book your Free Session</h2>
+        <p style="text-align: center; font-size: 14px; color: #666;">Learn from India's best teachers</p>
+        <div class="session-mode">
+          <button>Online</button>
+          <button>Offline</button>
         </div>
-      </section>
+        <input type="text" placeholder="Enter Name of your Child" required/>
+        <input type="text" placeholder="Enter your Mobile Number" required/>
+        <input type="email" placeholder="Email Address"/>
+        <select required>
+          <option value="">Select State</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Other">Other</option>
+        </select>
+        <button class="submit-btn">Continue to Schedule</button>
+      </div>
+    </section>
 
-      <!-- Footer -->
-       <footer>
-        <p>&copy 2025 Learnova . All rights reserved. </p>
-       </footer>
-       <script>
-        // Toggle active button for session mode
-        const sessionButtons = document.querySelectorAll('.session-mode button');
-    
-        sessionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                sessionButtons.forEach(btn => btn.style.backgroundColor = '#eee');
-                button.style.backgroundColor = '#d1c4e9'; // highlighted color
-            });
-        });
-    
-        // Form validation (example)
-        const submitBtn = document.querySelector('.submit-btn');
-        submitBtn.addEventListener('click', (e) => {
-            const name = document.querySelector('input[placeholder="Enter Name of your Child"]').value;
-            const mobile = document.querySelector('input[placeholder="Enter your Mobile Number"]').value;
-            const state = document.querySelector('select').value;
-    
-            if (!name || !mobile || !state) {
-                e.preventDefault();
-                alert("Please fill in all required fields.");
-            }
-        });
-    </script>
+    <!-- Features -->
+    <section class="features">
+      <h2>Why Choose Learnova?</h2>
+      <div class="feature-grid">
+        <div class="feature-box">📚 Interactive Lessons</div>
+        <div class="feature-box">🧠 Concept Clarity</div>
+        <div class="feature-box">🎯 NEET/JEE Focused</div>
+        <div class="feature-box">📈 Progress Tracking</div>
+      </div>
+    </section>
 
-<script>
-    // Toggle session mode highlighting
-    const session = document.querySelectorAll('.session-mode button');
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Learnova. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const correctUsername = 'admin';
+      const correctPassword = 'Farha123';
+
+      if (username === correctUsername && password === correctPassword) {
+        document.querySelector('.login-page').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      } else {
+        alert('Incorrect username or password');
+      }
+    }
+
+    // Session buttons toggle
+    const sessionButtons = document.querySelectorAll('.session-mode button');
     sessionButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            sessionButtons.forEach(btn => btn.style.backgroundColor = '#eee');
-            button.style.backgroundColor = '#d1c4e9'; // active color
-        });
+      button.addEventListener('click', () => {
+        sessionButtons.forEach(btn => btn.style.backgroundColor = '#eee');
+        button.style.backgroundColor = '#d1c4e9';
+      });
     });
 
-    // Form submission handling
-    const submit = document.querySelector('.submit-btn');
+    // Form validation and demo submission
+    const submitBtn = document.querySelector('.submit-btn');
     submitBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // prevent actual form submission
+      e.preventDefault();
 
-        const name = document.querySelector('input[placeholder="Enter Name of your Child"]').value;
-        const mobile = document.querySelector('input[placeholder="Enter your Mobile Number"]').value;
-        const email = document.querySelector('input[placeholder="Email Address"]').value;
-        const state = document.querySelector('select').value;
+      const name = document.querySelector('input[placeholder="Enter Name of your Child"]').value;
+      const mobile = document.querySelector('input[placeholder="Enter your Mobile Number"]').value;
+      const email = document.querySelector('input[placeholder="Email Address"]').value;
+      const state = document.querySelector('select').value;
 
-        if (!name || !mobile || !state) {
-            alert("Please fill in all required fields.");
-            return;
-        }
+      if (!name || !mobile || !state) {
+        alert("Please fill in all required fields.");
+        return;
+      }
 
-        // Mock OTP behavior
-        if (mobile.length !== 10 || !/^\d+$/.test(mobile)) {
-            alert("Please enter a valid 10-digit mobile number.");
-            return;
-        }
+      if (mobile.length !== 10 || !/^\d+$/.test(mobile)) {
+        alert("Please enter a valid 10-digit mobile number.");
+        return;
+      }
 
-        // Simulate OTP send
-        alert(`OTP sent to ${mobile}!\n(Just a demo 😊)`);
+      alert(`OTP sent to ${mobile}! (Just a demo 😊)`);
 
-        // Mock successful submission
-        setTimeout(() => {
-            alert("Your free session is successfully scheduled! 🎉");
-        }, 1000);
+      setTimeout(() => {
+        alert("Your free session is successfully scheduled! 🎉");
+      }, 1000);
     });
-</script>
+  </script>
 
-<div id="g_id_onload"
-     data-client_id="428767959991-p7p93mgtlbbi9gigoge0sfe8i69mkm4j.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-callback="handleCredentialResponse"
-     data-auto_prompt="false">
-</div>
+  <!-- Google Sign-In -->
+  <div id="g_id_onload"
+    data-client_id="428767959991-p7p93mgtlbbi9gigoge0sfe8i69mkm4j.apps.googleusercontent.com"
+    data-context="signin"
+    data-ux_mode="popup"
+    data-callback="handleCredentialResponse"
+    data-auto_prompt="false"></div>
 
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="outline"
-     data-text="sign_in_with"
-     data-size="large"
-     data-logo_alignment="left">
-</div>
+  <div class="g_id_signin"
+    data-type="standard"
+    data-shape="rectangular"
+    data-theme="outline"
+    data-text="sign_in_with"
+    data-size="large"
+    data-logo_alignment="left"></div>
 
-<script>
+  <script>
     function handleCredentialResponse(response) {
       console.log("Encoded JWT ID token: " + response.credential);
       alert("Google Sign-In successful!\nToken: " + response.credential);
-      // You can now send this token to your backend to verify and login
     }
   </script>
-  
-
-    
 </body>
 </html>
